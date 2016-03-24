@@ -3,8 +3,6 @@
 const _       = require('lodash');
 const caniuse = require('caniuse-api');
 
-'use strict';
-
 module.exports = (pluginContext) => {
     const shell = pluginContext.shell;
 
