@@ -15,7 +15,7 @@ module.exports = (pluginContext) => {
         let results = caniuse.find(query_trim);
 
         _.take(results, 5).map((x) => {
-          const support = caniuse.getSupport('border-radius');
+          const support = caniuse.getSupport(query_trim);
           const desc = 'Chrome <b>' + support.chrome.y + '+</b>, '
           + 'Firefox <b>' + support.firefox.y + '+</b>, '
           + 'IE <b>' + support.ie.y + '+</b>, '
