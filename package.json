@@ -1,9 +1,8 @@
 {
   "name": "hain-plugin-caniuse",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "All the power of caniuse.com in a hain plugin",
   "main": "index.js",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/metrakit/hain-plugin-caniuse.git"
@@ -19,7 +18,10 @@
   "homepage": "https://github.com/metrakit/hain-plugin-caniuse",
   "dependencies": {
     "lodash": "^4.6.1",
-    "caniuse-api": "^1.4.1"
+    "lodash.memoize": "^2.4.1",
+    "lodash.uniq": "^3.1.0",
+    "browserslist": "^1.0.1",
+    "caniuse-db": "^1.0.30000346"
   },
   "hain": {
     "prefix": "/caniuse",
