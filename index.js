@@ -1,6 +1,3 @@
-/*jshint esversion: 6 */
-/*jshint globalstrict: true */
-
 'use strict';
 
 const _       = require('lodash');
