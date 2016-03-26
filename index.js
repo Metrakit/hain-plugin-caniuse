@@ -24,9 +24,9 @@ module.exports = (pluginContext) => {
             desc = desc + capitalize(x) + ' <b>';
           }
           if (support[x].y === undefined) {
-            desc = desc + '✘';
+            desc = '<span style="color: #b51c1c">'+desc + '✘</span>';
           } else {
-            desc = desc + support[x].y + '+';
+            desc = '<span style="color: #1a6510">'+desc + support[x].y + '+ </span>';
           }
           desc = desc + '</b>, ';
         });
