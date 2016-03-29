@@ -6,7 +6,7 @@ const caniuse = require('./caniuse-api');
 module.exports = (pluginContext) => {
     const shell = pluginContext.shell;
 
-    const browsers = ['firefox', 'chrome', 'ie', 'opera', 'safari'];
+    const browsers = ['firefox', 'chrome', 'ie', 'edge', 'opera', 'safari'];
 
     function capitalize(word) {
       return word[0].toUpperCase() + word.slice(1);
@@ -16,7 +16,7 @@ module.exports = (pluginContext) => {
         const support = caniuse.getSupport(property);
         var desc = "";
 
-        _.take(browsers, 5).map((x) => {
+        _.take(browsers, 6).map((x) => {
 
           if (x == 'ie') {
             desc = desc + 'IE <b>';
