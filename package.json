@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-caniuse",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "All the power of caniuse.com in a hain plugin",
   "main": "index.js",
   "repository": {

@@ -2,11 +2,19 @@
 
 const _       = require('lodash');
 const caniuse = require('./caniuse-api');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = (pluginContext) => {
     const shell = pluginContext.shell;
 
+    let html = '';
+
     const browsers = ['firefox', 'chrome', 'ie', 'edge', 'opera', 'safari'];
+
+    function startup() {
+      html = fs.readFileSync(path.join(__dirname, 'preview.html'), 'utf8');
+    }
 
     function capitalize(word) {
       return word[0].toUpperCase() + word.slice(1);
@@ -72,7 +80,8 @@ module.exports = (pluginContext) => {
                 id: x,
                 payload: 'open',
                 title: x,
-                desc: getDesc(x)
+                desc: getDesc(x),
+                preview: true
             });
           });
         }
@@ -85,5 +94,11 @@ module.exports = (pluginContext) => {
         shell.openExternal(`http://caniuse.com/#search=${id}`);
     }
 
-    return {search, execute};
+    function renderPreview(id, payload, render) {
+      var preview = html.replace('%property%', id);
+      render(preview);
+    }
+
+
+    return {startup, search, execute, renderPreview};
 };
